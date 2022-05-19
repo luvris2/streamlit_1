@@ -4,7 +4,7 @@ def main() :
     # 유저한테 입력을 받는 방법
 
     # 1. 이름 입력 받기
-    name = st.text_input('이름을 입력하세요 !')
+    name = st.text_input('이름을 입력하세요 !', max_chars=10)
     if name != '' :
         st.subheader(name + '님 안녕하세요.')
 
@@ -14,7 +14,7 @@ def main() :
 
     # 3. 여러 행을 입력 가능하게 하기
     message = st.text_area('메세지를 입력하세요.', height = 3)
-    st.subheader(message)
+    st.text(message)
 
     # 4. 숫자 입력 , 정수
     st.number_input('숫자 입력', 1, 100)

@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 import pandas as pd
 import os
 from datetime import datetime
@@ -21,11 +20,11 @@ def main() :
         
         # 파일명을 유니크하게 만들어서 저장해야 함
         # 현재시간을 활용해서 파일명 만들기
-        current_time = datetime.now()
-        current_time = current_time.isoformat().replace(':', '_')
-        new_file_name = current_time + '.jpg'
-        upload_file.name = new_file_name
-        save_uploaded_file('temp', upload_file)
+            current_time = datetime.now()
+            current_time = current_time.isoformat().replace(':', '_')
+            new_file_name = current_time + '.jpg'
+            upload_file.name = new_file_name
+            save_uploaded_file('temp', upload_file)
             
     elif choice == menu[1] :
         st.subheader('CSV 파일 업로드')
@@ -39,8 +38,9 @@ def save_uploaded_file(directory, file) :
     if not os.path.exists(directory) :
         os.makedirs(directory)
     # 2. 디렉토리가 있으니, 파일을 저장.
-    with open(os.path.join(directory, file.name), 'wb') as f :
-        f.write(file.getbuffer())
+    st.text(os.path.join(directory, file.name))
+with open(os.path.join(directory, file.name), 'wb') as f :
+    f.write(file.getbuffer())
     return st.success("Saved file : {} in {}".format(file.name, directory))
 
 if __name__ == '__main__' :
