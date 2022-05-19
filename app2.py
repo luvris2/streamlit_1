@@ -1,4 +1,7 @@
 import streamlit as st
+
+# 웹에서 텍스트 표시
+
 def main():
     st.title('타이틀 웹 대시보드')
     st.header('헤더 이 영역은 헤더')
