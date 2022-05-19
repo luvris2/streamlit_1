@@ -16,13 +16,9 @@ def main() :
     video_file = open('data2\secret_of_success.mp4', 'rb')
     st.video(video_file)
 
-    st.video('data2\secret_of_success.mp4')#, format='video/mp4')
-
     # 4. 오디오 화면에 표시
     audio_file = open('data2/song.mp3', 'rb')
     st.audio(audio_file.read(), format='audio/mp3')
-
-    st.audio('data2/song.mp3')
 
 if __name__ == '__main__' : 
     main()
